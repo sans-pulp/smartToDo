@@ -15,5 +15,5 @@
 
 ### Products
 
-#### Google Products API
-<https://developers.google.com/shopping-content/guides/products/products-api>
+#### AWS
+<https://webservices.amazon.com/paapi5/documentation/search-items.html>
