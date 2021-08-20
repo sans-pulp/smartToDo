@@ -17,7 +17,7 @@ I want to add any Grocery/Store Product to the appropriate list when I type the 
 Because that would save me time.
 
 5. As a user
-I should be able to delete items from my list 
+I should be able to delete items from my lists 
 Because I've changed my mind about them.
 
 6. As a user 
@@ -39,6 +39,14 @@ Because that should be the only way to access my data.
 10. As a user
 I should be able to logout 
 Because I don't want others to be able to see my data.
+
+11. As a guest
+I should be getting a login page with the option to register instead
+Because it's possible that I may already have an account
+
+12. As a guest
+I should be able to access nobody's lists
+Because I have no authorization to add or delete items from any list.
 
 
 ### STRETCH
