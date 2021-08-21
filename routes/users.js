@@ -7,7 +7,7 @@
 
 const express = require('express');
 const router  = express.Router();
-
+const { getUserByEmail } = require('../db/queries/users-queries');
 module.exports = (db) => {
 
   // Login Page GET Route
@@ -16,16 +16,16 @@ module.exports = (db) => {
   });
   // Login Page POST Route
   router.post('/login', (req, res) => {
-    const getUserByEmail = (email) => {
-      return db.query('SELECT * FROM users WHERE email = $1', [email])
-        .then((res) => {
-          console.log('db query:', res.rows[0]);
-          return res.rows[0];
-        })
-        .catch((err) => {
-          console.log('❌ query error:', err.stack);
-        });
-    };
+    // const getUserByEmail = (email) => {
+    //   return db.query('SELECT * FROM users WHERE email = $1', [email])
+    //     .then((res) => {
+    //       console.log('db query:', res.rows[0]);
+    //       return res.rows[0];
+    //     })
+    //     .catch((err) => {
+    //       console.log('❌ query error:', err.stack);
+    //     });
+    // };
     const { email, password } = req.body;
     getUserByEmail(email)
       .then(user => {
