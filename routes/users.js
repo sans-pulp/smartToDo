@@ -25,12 +25,12 @@ module.exports = (db) => {
   //Register Page POST Route
 
   // User Page
-  router.get("/:user", (req, res) => {
+  router.get("/", (req, res) => {
     db.query(`SELECT * FROM users;`)
     .then(data => {
       const users = data.rows;
       console.log(users)
-      res.render("dash");
+      res.render("index");
       })
       .catch(err => {
         res
