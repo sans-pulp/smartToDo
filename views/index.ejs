@@ -12,6 +12,9 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/books-api.js"></script>
+    <script type="text/javascript" src="/scripts/restaurants-api.js"></script>
+    <script type="text/javascript" src="/scripts/movie-tv-api.js"></script>
   </head>
 
   <body>
@@ -21,6 +24,11 @@
       <form action="/logout" method="post">
         <button type="submit">Logout</button>
       </form>
+      <button id="Save">Book API</button>
+      <input id="book-search" type="text" placeholder="book">
+      <input id="movies-search" type="text" placeholder="movies">
+      <input id="food-search" type="text" placeholder="food">
+      <input id="product-search" type="text" placeholder="product">
       <% } else {%>
         <a href="/login"><p>Login</p></a>
         <a href="/register"><p>Register</p></a>
