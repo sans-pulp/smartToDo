@@ -7,7 +7,7 @@
 
 const express = require('express');
 const router  = express.Router();
-const { getUserByEmail } = require('../db/queries/users-queries');
+const { getUserByEmail, addUser } = require('../db/queries/users-queries');
 module.exports = (db) => {
 
   // Login Page GET Route
@@ -16,20 +16,9 @@ module.exports = (db) => {
   });
   // Login Page POST Route
   router.post('/login', (req, res) => {
-    // const getUserByEmail = (email) => {
-    //   return db.query('SELECT * FROM users WHERE email = $1', [email])
-    //     .then((res) => {
-    //       console.log('db query:', res.rows[0]);
-    //       return res.rows[0];
-    //     })
-    //     .catch((err) => {
-    //       console.log('❌ query error:', err.stack);
-    //     });
-    // };
     const { email, password } = req.body;
     getUserByEmail(email)
       .then(user => {
-        //console.log('getUserByEmail form call:', user);
         if (password === user.password) {
           //push user object into templateVars, target those variables in index.ejs (Profile card)
           //fire off a db query to books/movies, etc to retrieve all user lists. pass those into templateVars..
@@ -53,7 +42,14 @@ module.exports = (db) => {
     res.render("todo_register");
   });
   //Register Page POST Route
-
+  router.post("/register", (req, res) => {
+    console.log(req.body);
+    const {name, email, password} = req.body;
+    addUser(name, email, password)
+      .then((response) => {
+        res.redirect('/login');
+      });
+  });
   // User Page
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM users;`)
