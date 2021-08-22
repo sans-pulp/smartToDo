@@ -53,9 +53,13 @@ app.use("/", usersRoutes(db));
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-app.get("/", (req, res) => {
-  res.render("index");
-});
+// app.get("/", (req, res) => {
+//   console.log('req.session', req.session.user_id)
+//   const userId = req.session.user_id
+//   console.log('userId', userId)
+
+//   res.render("index");
+// });
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

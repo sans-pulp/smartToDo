@@ -7,7 +7,7 @@
 
 const express = require('express');
 const router  = express.Router();
-const { getUserByEmail, addUser } = require('../db/queries/users-queries');
+const { getUserByEmail, getUserById, addUser } = require('../db/queries/users-queries');
 module.exports = (db) => {
 
   // Login Page GET Route
@@ -22,7 +22,9 @@ module.exports = (db) => {
         if (password === user.password) {
           //push user object into templateVars, target those variables in index.ejs (Profile card)
           //fire off a db query to books/movies, etc to retrieve all user lists. pass those into templateVars..
-          req.session.user_id = user;
+          req.session.user_id = user.id;
+
+          // const templateVars = { user }
           res.redirect('/');
         }
       })
@@ -52,12 +54,14 @@ module.exports = (db) => {
   });
   // User Page
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
-      .then(data => {
-        const users = data.rows;
-        console.log(users);
-        res.render("index");
-      })
+    const userId = req.session.user_id
+    // console.log('userId', userId)
+    getUserById(userId)
+    .then(user => {
+      const templateVars = { user }
+      res.render("index", templateVars);
+    })
+
       .catch(err => {
         res
           .status(500)

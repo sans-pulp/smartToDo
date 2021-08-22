@@ -17,6 +17,16 @@ const getUserByEmail = (email) => {
     });
 };
 
+const getUserById = (id) => {
+  return db.query(`SELECT * FROM users WHERE id = $1;`, [id])
+  .then((res) => {
+    return res.rows[0]
+  })
+  .catch((err) => {
+    console.log('❌ getUserById query error:', err.stack);
+  });
+}
+
 const addUser = (name, email, password) => {
   return db.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *;', [name, email, password])
     .then((res) => {
@@ -29,4 +39,4 @@ const addUser = (name, email, password) => {
 
 };
 
-module.exports = { getUserByEmail, addUser };
+module.exports = { getUserByEmail, getUserById, addUser };
