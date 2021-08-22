@@ -13,8 +13,20 @@ const getUserByEmail = (email) => {
       return res.rows[0];
     })
     .catch((err) => {
-      console.log('❌ query error:', err.stack);
+      console.log('❌ getUserByEmail query error:', err.stack);
     });
 };
 
-module.exports = { getUserByEmail };
+const addUser = (name, email, password) => {
+  return db.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *;', [name, email, password])
+    .then((res) => {
+      console.log('New user added', res.rows);
+      return res.rows;
+    })
+    .catch((err) => {
+      console.log('❌ addUser query error:', err.message);
+    });
+
+};
+
+module.exports = { getUserByEmail, addUser };
