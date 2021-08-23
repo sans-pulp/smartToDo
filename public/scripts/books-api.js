@@ -13,7 +13,7 @@ $(document).ready(function() {
           const dataArr = data.items;
           for (let i = 0; i < 2; i++) {
             console.log(dataArr[i].volumeInfo.title, dataArr[i].volumeInfo.authors);
-            $('#api-res').prepend(`<li> Title: ${dataArr[i].volumeInfo.title}, Author: ${dataArr[i].volumeInfo.authors}</li>`);
+            $('#api-res').prepend(`<li> Title: ${dataArr[i].volumeInfo.title}, Author: ${dataArr[i].volumeInfo.authors}</li> <img src=${dataArr[i].volumeInfo.imageLinks.thumbnail}>`);
           }
           // store stuff in db from here? --> ON Click!
         });
