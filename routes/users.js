@@ -12,7 +12,13 @@ module.exports = (db) => {
 
   // Login Page GET Route
   router.get("/login", (req, res) => {
-    res.render("todo_login");
+    const userId = req.session.user_id
+    // console.log('userId', userId)
+    getUserById(userId)
+    .then(user => {
+      const templateVars = { user };
+      res.render("todo_login", templateVars);
+    })
   });
   // Login Page POST Route
   router.post('/login', (req, res) => {
@@ -41,7 +47,13 @@ module.exports = (db) => {
   });
   // Register Page GET Route
   router.get("/register", (req, res) => {
-    res.render("todo_register");
+    const userId = req.session.user_id
+    // console.log('userId', userId)
+    getUserById(userId)
+    .then(user => {
+      const templateVars = { user };
+      res.render("todo_register", templateVars);
+    })
   });
   //Register Page POST Route
   router.post("/register", (req, res) => {
