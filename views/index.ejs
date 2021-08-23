@@ -18,20 +18,25 @@
   </head>
 
   <body>
-    <%- include('partials/_header') %>
-    <% if(user) {%>
-      <h4 class="text-center mt-5"><%= user.email %></h4>
-      <form action="/logout" method="post">
-        <button type="submit">Logout</button>
-      </form>
-      <button id="Save">Book API</button>
-      <input id="book-search" type="text" placeholder="book">
-      <input id="movies-search" type="text" placeholder="movies">
-      <input id="food-search" type="text" placeholder="food">
-      <input id="product-search" type="text" placeholder="product">
-      <% } else {%>
-        <a href="/login"><p>Login</p></a>
-        <a href="/register"><p>Register</p></a>
-      <% } %>
+    <%- include('partials/_header') %> <% if(user) {%>
+    <h4 class="text-center mt-5"><%= user.email %></h4>
+    <form action="/logout" method="post">
+      <button type="submit">Logout</button>
+    </form>
+    <button id="Save">Book API</button>
+    <div class="books">
+      <input id="book-search" type="text" placeholder="book" />
+      <textarea name="api-res-1" id="api-res-1" cols="20" rows="5"></textarea>
+      <textarea name="api-res-2" id="api-res-2" cols="20" rows="5"></textarea>
+    </div>
+    <div class="movies">
+      <input id="movies-search" type="text" placeholder="movies" />
+    </div>
+    <input id="food-search" type="text" placeholder="food" />
+    <input id="product-search" type="text" placeholder="product" />
+    <% } else {%>
+    <a href="/login"><p>Login</p></a>
+    <a href="/register"><p>Register</p></a>
+    <% } %>
   </body>
 </html>
