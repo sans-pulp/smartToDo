@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const myKey = 'AIzaSyAK1_0cYdihfjuAf_yQdIzt2WY80wQsFLw';
+  const myKey = 'INSERT API KEY';
 
   $("#food-search").on('input', function() {
     // target text in search box, pass that into API as query term...
