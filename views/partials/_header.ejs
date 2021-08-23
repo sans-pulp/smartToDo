@@ -1,3 +1,14 @@
 <header>
-<h1>This is the ejs header</h1>
+<h1>Smart To-Do</h1>
+<% if(user) {%>
+<div class="userProfile">
+  <div class="userInfo">
+    <p><%= user.email %></p>
+    <form action="/logout" method="post">
+      <button type="submit">Logout</button>
+    </form>
+  </div>
+  <img src= <%= user.avatar %> alt="">
+</div>
+<% } %>
 </header>
