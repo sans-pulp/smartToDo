@@ -12,14 +12,22 @@ $(document).ready(function() {
         .then(data => {
           const dataArr = data.items;
           for (let i = 0; i < 2; i++) {
-            console.log(dataArr[i].volumeInfo.title, dataArr[i].volumeInfo.authors);
+            //console.log(dataArr[i].volumeInfo.title, dataArr[i].volumeInfo.authors);
             $('#book-res').prepend(`<li> Title: ${dataArr[i].volumeInfo.title}, Author: ${dataArr[i].volumeInfo.authors}</li> <img src=${dataArr[i].volumeInfo.imageLinks.thumbnail}>`);
           }
+          const books = { "one": dataArr[0].volumeInfo, "two": dataArr[1].volumeInfo}
+          return books;
           // store stuff in db from here? --> ON Click!
+        })
+        .then(book_data =>{
+          console.log('api data', book_data);
+          //const books = { "first": {}, "second": {} }
+        //how would I get this data sent into the db? is it a post req?
         });
     }
   });
   // Need to write query to store data in db -- CREATED fake table (books_api)
+  /**/
 });
 
 /* stuff to store from books api -- all under volumeInfo
