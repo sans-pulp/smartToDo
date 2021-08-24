@@ -1,33 +1,33 @@
 const express = require('express');
 const router = express.Router();
-const { getAllBooks, getBooksByUserId ,addBook } = require('../db/queries/book-queries');
+const { getAllMovies, getMoviesByUserId, addMovie } = require('../db/queries/movies-queries');
 
 module.exports = (db) => {
-  // GET /books
+  //GET /movies
   router.get("/", (req, res) => {
-    getAllBooks()
-      .then(books => {
-        res.json(books);
+    getAllMovies()
+      .then(movies => {
+        res.json(movies);
       });
   });
 
   router.get("/:id", (req, res) => {
     const userId = req.session.user_id;
-    getBooksByUserId(userId)
-      .then(book => {
-        res.json(book);
+    getMoviesByUserId(userId)
+      .then(movies => {
+        res.json(movies);
       });
   });
 
   router.post("/new", (req, res) => {
     console.log(req.body);
-    const bookObj = req.body;
-    addBook(bookObj)
+    const movieObj = req.body;
+    addMovie(movieObj)
       .then(() => {
         res.json({success: true});
       });
   });
 
-
   return router;
+
 };

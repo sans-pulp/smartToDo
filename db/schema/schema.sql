@@ -25,7 +25,11 @@ CREATE TABLE books (
 CREATE TABLE movies (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
-  item TEXT NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  release_date  VARCHAR(255),
+  image_thumbnail VARCHAR(255) DEFAULT 'https://upload.wikimedia.org/wikipedia/en/thumb/e/e7/Video-x-generic.svg/1024px-Video-x-generic.svg.png',
+  rating INTEGER,
+  media_type VARCHAR(255),
   created_at TIMESTAMP DEFAULT NOW(),
   is_completed BOOLEAN DEFAULT TRUE
 );
