@@ -23,9 +23,9 @@ const getBooksByUserId = (id) => {
     });
 };
 
-const addBook = (bookObj, user_id) => {
+const addBook = (bookObj) => {
   const query = `INSERT INTO books_api (user_id, title, author, publisher, image_thumbnail) VALUES ($1, $2, $3, $4, $5) RETURNING *; `;
-  const values = [user_id, bookObj.title, bookObj.author, bookObj.publisher, bookObj.image_thumbnail];
+  const values = [bookObj.user, bookObj.title, bookObj.author, bookObj.publisher, bookObj.image];
   return db.query(query, values)
     .then((res) => {
       console.log('addBook query', res.rows);
