@@ -11,8 +11,8 @@ const getAllBooks = () => {
     });
 };
 
-const getBooksById = (id) => {
-  const query = 'SELECT * FROM books_api WHERE id = $1;';
+const getBooksByUserId = (id) => {
+  const query = 'SELECT * FROM books_api WHERE user_id = $1;';
   return db.query(query, [id])
     .then((res) => {
       console.log('getAllBooks query:', res.rows);
@@ -37,5 +37,5 @@ const addBook = (bookObj, user_id) => {
 };
 
 module.exports = {
-  getAllBooks, getBooksById, addBook
+  getAllBooks, getBooksByUserId, addBook
 };
