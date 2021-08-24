@@ -1,7 +1,7 @@
 const db = require('../../lib/db');
 
 const getAllBooks = () => {
-  return db.query('SELECT * FROM books_api;')
+  return db.query('SELECT * FROM books;')
     .then((res) => {
       console.log('getAllBooks query:', res.rows);
       return res.rows;
@@ -12,7 +12,7 @@ const getAllBooks = () => {
 };
 
 const getBooksByUserId = (id) => {
-  const query = 'SELECT * FROM books_api WHERE user_id = $1;';
+  const query = 'SELECT * FROM books WHERE user_id = $1;';
   return db.query(query, [id])
     .then((res) => {
       console.log('getAllBooks query:', res.rows);
@@ -24,7 +24,7 @@ const getBooksByUserId = (id) => {
 };
 
 const addBook = (bookObj) => {
-  const query = `INSERT INTO books_api (user_id, title, author, publisher, image_thumbnail) VALUES ($1, $2, $3, $4, $5) RETURNING *; `;
+  const query = `INSERT INTO books (user_id, title, author, publisher, image_thumbnail) VALUES ($1, $2, $3, $4, $5) RETURNING *; `;
   const values = [bookObj.user, bookObj.title, bookObj.author, bookObj.publisher, bookObj.image];
   return db.query(query, values)
     .then((res) => {

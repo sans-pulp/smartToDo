@@ -40,13 +40,14 @@ $(() => {
       console.log(bookObj);
       $.post("/api/books/new", bookObj)
         .done(function(data) {
-          alert("Book added" + data);
+          console.log(data);
+          alert("Book added!");
           window.location = "/";
-      });
+        });
 
     });
 
-  })
+  });
 
 });
 
