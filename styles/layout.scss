@@ -43,6 +43,53 @@ body {
       }
     }
   }
+  ul {
+    list-style: none;
+    .list-item{
+      background-color: snow;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  }
+  #todo-header {
+    padding-right: 25px;
+  }
+  #todo-list {
+    button:hover {
+      cursor: pointer;
+      color: crimson;
+    }
+    padding-right: 25px;
+    .list-item {
+      border: solid 3px black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .completed-button {
+        margin-left: 10px;
+      }
+      .completed-button:hover {
+        cursor: pointer;
+        color: crimson;
+      }
+    }
+    .item-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .hover-buttons button{
+      border: none;
+      background-color: transparent;
+      height: 100%;
+      padding:10px;
+      margin:0;
+    }
+    .hover-buttons button:hover {
+      visibility: visible;
+    }
+  }
   main{
     margin-top: 20px;
   }
@@ -55,15 +102,24 @@ body {
     margin-bottom: 30px;
 
     .list-button {
+      padding-top: 20px;
       height: 100px;
       width: 100px;
       margin: 5px;
+      color:white;
     }
   }
   .col-md{
     border: dotted 1px blue;
 
   }
-
-
+  .inactive{background:steelblue}
+  .item-input {
+    visibility: hidden;
+    input {
+      border: none;
+      border-bottom: black 3px solid;
+      background-color: transparent;
+    }
+  }
 }
