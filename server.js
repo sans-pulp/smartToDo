@@ -45,7 +45,7 @@ const booksRoutes = require("./routes/books-router")
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/", usersRoutes(db));
-app.use("/books", booksRoutes(db));
+app.use("/api/books", booksRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
