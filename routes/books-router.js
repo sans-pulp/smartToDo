@@ -9,9 +9,8 @@ module.exports = (db) => {
       .then(books => {
         res.json(books);
       });
-
   });
-  //how would I get books by the userID and show on index?? I have the query, can i use req.session?
+
   router.get("/:id", (req, res) => {
     const userId = req.session.user_id;
     getBooksByUserId(userId)

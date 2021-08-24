@@ -1,12 +1,12 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
   let whichList = document.getElementById('which-list');
-  $('.list-button').click(function(){
+  $('.list-button').click(function() {
     $('.list-button').removeClass('active').addClass('inactive');
-     $(this).removeClass('inactive').addClass('active');
-     if ($(this).hasClass('books') && $(this).hasClass('active')) {
-       $('#search').empty();
-       $('#search').append(`
+    $(this).removeClass('inactive').addClass('active');
+    if ($(this).hasClass('books') && $(this).hasClass('active')) {
+      $('#search').empty();
+      $('#search').append(`
       <div class="books item-input">
         <input id="book-search" type="text" placeholder="Enter a book title" />
           <ul id="book-res">
@@ -14,11 +14,11 @@ $(document).ready(function () {
           </ul>
       </div>`
       );
-       $('.item-input').css("visibility", "hidden");
-       $('div.books').css("visibility", "visible");
-       whichList.innerHTML = "My Books";
-      }
-     if ($(this).hasClass('movies') && $(this).hasClass('active')) {
+      $('.item-input').css("visibility", "hidden");
+      $('div.books').css("visibility", "visible");
+      whichList.innerHTML = "My Books";
+    }
+    if ($(this).hasClass('movies') && $(this).hasClass('active')) {
       $('#search').empty();
       $('#search').append(`
       <div class="movies item-input">
@@ -28,11 +28,11 @@ $(document).ready(function () {
           </ul>
       </div>
       `);
-       $('.item-input').css("visibility", "hidden");
-       $('div.movies').css("visibility", "visible");
-       whichList.innerHTML = "My Movies";
-      }
-     if ($(this).hasClass('food') && $(this).hasClass('active')) {
+      $('.item-input').css("visibility", "hidden");
+      $('div.movies').css("visibility", "visible");
+      whichList.innerHTML = "My Movies";
+    }
+    if ($(this).hasClass('food') && $(this).hasClass('active')) {
       $('#search').empty();
       $('#search').append(`
       <div class="food item-input">
@@ -42,11 +42,11 @@ $(document).ready(function () {
           </ul>
       </div>
       `);
-        $('.item-input').css("visibility", "hidden");
-        $('div.food').css("visibility", "visible");
-        whichList.innerHTML = "My Restaurants";
-      }
-     if ($(this).hasClass('products') && $(this).hasClass('active')) {
+      $('.item-input').css("visibility", "hidden");
+      $('div.food').css("visibility", "visible");
+      whichList.innerHTML = "My Restaurants";
+    }
+    if ($(this).hasClass('products') && $(this).hasClass('active')) {
       $('#search').empty();
       $('#search').append(`
       <div class="products item-input">
@@ -56,9 +56,9 @@ $(document).ready(function () {
           </ul>
       </div>
       `);
-        $('.item-input').css("visibility", "hidden");
-        $('div.products').css("visibility", "visible");
-        whichList.innerHTML = "My Shopping List";
-      }
-    });
+      $('.item-input').css("visibility", "hidden");
+      $('div.products').css("visibility", "visible");
+      whichList.innerHTML = "My Shopping List";
+    }
+  });
 });
