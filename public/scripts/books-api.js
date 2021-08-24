@@ -14,10 +14,9 @@ $(() => {
         })
           .then(data => {
             const dataArr = data.items;
-            //console.log('dataArr', dataArr);
             $bookList = data.items;
             for (let i = 0; i < 5; i++) {
-
+              //dynamically show search results on page
               $('#book-res').append(`<li data-id="${i}" id="book${i + 1}"><p class="title">Title: ${dataArr[i].volumeInfo.title}</p><p class="author">Author(s): ${dataArr[i].volumeInfo.authors}</p><img class="thumbnail" src=${dataArr[i].volumeInfo.imageLinks.thumbnail} /><button>Select this</button></li> `);
             }
 
@@ -51,20 +50,4 @@ $(() => {
 
 });
 
-// Need to write query to store data in db -- CREATED fake table (books_api)
-/**/
-//fnc to post to server
-const createBook = bookObj => {
-  const query = `INSERT INTO books_api (user_id, title, author, publisher, image_thumbnail) VALUES ($1, $2, $3, $4) RETURNING *`;
-  //retrieve user_id from cookie!!
-  const values = [bookObj.user, bookObj.title, bookObj.authors[0], bookObj.publisher, bookObj.imageLinks.thumbnail];
-  return db.query(query, values);
-};
-/* stuff to store from books api -- all under volumeInfo
-- title
-- authors[0] - first author
-- publisher
-- imageLinks.thumbnail
-  - get default image in case imageLinks.thumbnail does not exist
-*/
-
+// Need to write query to store data in db -- CREATED table (books_api)
