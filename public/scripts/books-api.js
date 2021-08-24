@@ -1,6 +1,5 @@
 $(() => {
   $('#search').on('click', '.item-input', function() {
-
     let $bookList = [];
     $("#book-search").on('input', function() {
       // target text in search box, pass that into API as query term...
