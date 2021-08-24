@@ -5,10 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCLWOKQnFXv95HlJwxAHojYrNjF0g5ECiI">
+</script>
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -19,21 +24,50 @@
 
   <body>
     <%- include('partials/_header') %> <% if(user) {%>
-    <h4 class="text-center mt-5"><%= user.email %></h4>
-    <form action="/logout" method="post">
-      <button type="submit">Logout</button>
-    </form>
-    <button id="Save">Book API</button>
-    <div class="books">
-      <input id="book-search" type="text" placeholder="book" />
-      <textarea name="api-res-1" id="api-res-1" cols="20" rows="5"></textarea>
-      <textarea name="api-res-2" id="api-res-2" cols="20" rows="5"></textarea>
+
+  <main class="container-lg">
+    <div class="row">
+    <div class="container column col-md">
+      <section class="button-box">
+        <a href="#" class="list-button btn btn-primary btn-lg active" role="button" aria-pressed="true">Watch</a>
+        <a href="#" class="list-button btn btn-primary btn-lg active" role="button" aria-pressed="true">Read</a>
+        <br>
+        <a href="#" class="list-button btn btn-primary btn-lg active" role="button" aria-pressed="true">Eat</a>
+        <a href="#" class="list-button btn btn-primary btn-lg active" role="button" aria-pressed="true">Buy</a>
+      </section>
+      <section>
+        <div class="books">
+          <input id="book-search" type="text" placeholder="book" />
+          <!-- append li children once API req is done -->
+          <ul id="book-res"></ul>
+        </div>
+        <div class="movies">
+          <input id="movies-search" type="text" placeholder="movies" />
+          <ul id="movie-res"></ul>
+        </div>
+        <div>
+          <input id="food-search" type="text" placeholder="food" />
+          <ul id="food-res"></ul>
+        </div>
+        <div>
+          <input id="product-search" type="text" placeholder="product" />
+          <ul id="product-res"></ul>
+        </div>
+    </section>
+
+
     </div>
-    <div class="movies">
-      <input id="movies-search" type="text" placeholder="movies" />
+    <div class="container column col-md">
+      <h2>Name of List</h2>
+      <ul>
+        <!-- Insert List Items Here -->
+      </ul>
+
     </div>
-    <input id="food-search" type="text" placeholder="food" />
-    <input id="product-search" type="text" placeholder="product" />
+  </div>
+
+  </main>
+
     <% } else {%>
     <a href="/login"><p>Login</p></a>
     <a href="/register"><p>Register</p></a>

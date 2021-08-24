@@ -43,5 +43,27 @@ body {
       }
     }
   }
+  main{
+    margin-top: 20px;
+  }
+  .column {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .button-box{
+    margin-bottom: 30px;
+
+    .list-button {
+      height: 100px;
+      width: 100px;
+      margin: 5px;
+    }
+  }
+  .col-md{
+    border: dotted 1px blue;
+
+  }
+
 
 }
