@@ -40,12 +40,13 @@ app.use(cookieSession({
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
-const booksRoutes = require("./routes/books-router")
-
+const booksRoutes = require("./routes/books-router");
+const moviesRoutes = require("./routes/movies-router");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/", usersRoutes(db));
 app.use("/api/books", booksRoutes(db));
+app.use("/api/movies", moviesRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
