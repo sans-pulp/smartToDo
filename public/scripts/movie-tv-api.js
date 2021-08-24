@@ -1,3 +1,4 @@
+
 $(() => {
   $('#search').on('click', '.item-input', function() {
     let $movieList = [];
@@ -11,7 +12,7 @@ $(() => {
         // $.get(`https://api.themoviedb.org/3/configuration?api_key=e6b6ba40dc45cede536cb541a2b35eab`, function (data) {
         //   console.log(data);
         // });
-        $.get(`https://api.themoviedb.org/3/search/multi?api_key=e6b6ba40dc45cede536cb541a2b35eab&query=${input}`, function(data) {
+        $.get(`https://api.themoviedb.org/3/search/multi?api_key=${config.movieApiKey}&query=${input}`, function(data) {
           console.log('API call:');
         })
           .then(data => {
