@@ -1,15 +1,12 @@
 $(document).ready(function() {
   $("#movies-search").on('input', function() {
-    //this gets the configuration to set the base_url for poster_path...
-    // $.get(`https://api.themoviedb.org/3/configuration?api_key=e6b6ba40dc45cede536cb541a2b35eab`, function(data) {
-    //   console.log(data);
-    // })
-    // target text in search box, pass that into API as query term...
+
     $('#movie-res').empty();
     let input = $(this).val();
     console.log(input.length);
     //Idea: Convert AJAX req into a promise, use .then to access data to store in db...
     if (input.length >= 4) {
+      //this gets the configuration to set the base_url for poster_path...
       $.get(`https://api.themoviedb.org/3/configuration?api_key=e6b6ba40dc45cede536cb541a2b35eab`, function(data) {
         console.log(data);
       });

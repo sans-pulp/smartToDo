@@ -1,10 +1,15 @@
 $(() => {
+  console.log('app.js');
   $.ajax({
     method: "GET",
-    url: "/api/users"
-  }).done((users) => {
-    for(user of users) {
-      $("<div>").text(user.name).appendTo($("body"));
-    }
-  });;
+    url: "/user",
+    xhrFields:{withCredentials: true}
+  }).done((data) => {
+    console.log('data', data);
+    const username = data.name;
+      $("<div>").text(username).appendTo($("body"));
+
+  });
+
+ 
 });

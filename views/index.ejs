@@ -21,6 +21,7 @@
     <%- include('partials/_header') %> <% if(user) {%>
     <h4 class="text-center mt-5"><%= user.email %></h4>
     <form action="/logout" method="post">
+      <input type="hidden" value="<%= user.id %>" name="userid" id="userid" />
       <button type="submit">Logout</button>
     </form>
     <button id="Save">Book API</button>

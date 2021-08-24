@@ -12,13 +12,13 @@ module.exports = (db) => {
 
   // Login Page GET Route
   router.get("/login", (req, res) => {
-    const userId = req.session.user_id
-    // console.log('userId', userId)
+    const userId = req.session.user_id;
     getUserById(userId)
-    .then(user => {
-      const templateVars = { user };
-      res.render("todo_login", templateVars);
-    })
+      .then(user => {
+        const templateVars = { user };
+        res.render("todo_login", templateVars);
+        //no more res.render, res.json the response.
+      });
   });
   // Login Page POST Route
   router.post('/login', (req, res) => {
@@ -26,11 +26,9 @@ module.exports = (db) => {
     getUserByEmail(email)
       .then(user => {
         if (password === user.password) {
-          //push user object into templateVars, target those variables in index.ejs (Profile card)
-          //fire off a db query to books/movies, etc to retrieve all user lists. pass those into templateVars..
           req.session.user_id = user.id;
-
           // const templateVars = { user }
+          // res.json(user)
           res.redirect('/');
         }
       })
@@ -47,13 +45,13 @@ module.exports = (db) => {
   });
   // Register Page GET Route
   router.get("/register", (req, res) => {
-    const userId = req.session.user_id
+    const userId = req.session.user_id;
     // console.log('userId', userId)
     getUserById(userId)
-    .then(user => {
-      const templateVars = { user };
-      res.render("todo_register", templateVars);
-    })
+      .then(user => {
+        const templateVars = { user };
+        res.render("todo_register", templateVars);
+      });
   });
   //Register Page POST Route
   router.post("/register", (req, res) => {
@@ -66,18 +64,28 @@ module.exports = (db) => {
   });
   // User Page
   router.get("/", (req, res) => {
-    const userId = req.session.user_id
+    const userId = req.session.user_id;
     // console.log('userId', userId)
     getUserById(userId)
-    .then(user => {
-      const templateVars = { user }
-      res.render("index", templateVars);
-    })
+      .then(user => {
+        const templateVars = { user };
+        //fire off a db query to books/movies, etc to retrieve all user lists. pass those into templateVars.
+        res.render("index", templateVars);
+      })
 
       .catch(err => {
         res
           .status(500)
           .json({ error: err.message });
+      });
+  });
+
+  router.get("/user", (req, res) => {
+    const userId = req.session.user_id;
+    // console.log('userId', userId)
+    getUserById(userId)
+      .then(user => {
+        res.json(user);
       });
   });
 
