@@ -20,5 +20,15 @@ module.exports = (db) => {
       });
   });
 
+  router.post("/new", (req, res) => {
+    console.log(req.body);
+    const bookObj = req.body;
+    addBook(bookObj)
+      .then(() => {
+        res.json({success: true});
+      });
+  });
+
+
   return router;
 };
