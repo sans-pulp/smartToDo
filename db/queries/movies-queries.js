@@ -36,6 +36,18 @@ const addMovie = (movieObj) => {
     });
 };
 
+const deleteMovieById = (id) => {
+  const query = `DELETE FROM movies WHERE id = $1 RETURNING *;`;
+  return db.query(query, [id])
+    .then((res) => {
+      console.log('deleteMovieById query:', res.rows);
+      return res.rows;
+    })
+    .catch((err) => {
+      console.log('❌ deleteMovieById query error:', err.stack);
+    });
+};
+
 module.exports = {
-  getAllMovies, getMoviesByUserId, addMovie
-}
+  getAllMovies, getMoviesByUserId, addMovie, deleteMovieById
+};
