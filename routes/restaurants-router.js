@@ -1,28 +1,28 @@
 const express = require('express');
 const router = express.Router();
-const { getAllMovies, getMoviesByUserId, addMovie, deleteMovieById } = require('../db/queries/movies-queries');
+const { getAllRestaurants, getRestaurantsByUserId, addRestaurant, deleteRestaurantById } = require('../db/queries/restaurant-queries');
 
 module.exports = (db) => {
-  //GET /api/movies
+  //GET /api/restaurants
   router.get("/", (req, res) => {
-    getAllMovies()
-      .then(movies => {
-        res.json(movies);
+    getAllRestaurants()
+      .then(restaurants => {
+        res.json(restaurants);
       });
   });
 
   router.get("/:id", (req, res) => {
     const userId = req.session.user_id;
-    getMoviesByUserId(userId)
-      .then(movies => {
-        res.json(movies);
+    getRestaurantsByUserId(userId)
+      .then(restaurants => {
+        res.json(restaurants);
       });
   });
 
   router.post("/new", (req, res) => {
     console.log(req.body);
-    const movieObj = req.body;
-    addMovie(movieObj)
+    const restObj = req.body;
+    addRestaurant(restObj)
       .then(() => {
         res.json({success: true});
       });
@@ -31,11 +31,11 @@ module.exports = (db) => {
   router.delete("/:id", (req, res) => {
     console.log(req.params);
     const id = req.params.id;
-    deleteMovieById(id)
+    deleteRestaurantById(id)
       .then(() => {
         res.json({success: true});
       });
   });
-  return router;
 
+  return router;
 };

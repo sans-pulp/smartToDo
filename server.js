@@ -10,7 +10,7 @@ const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
 const cookieSession = require('cookie-session');
-
+const cors_proxy = require('cors-anywhere');
 // PG database client/connection setup -- abstracted to db file!
 const db = require('./lib/db');
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -38,12 +38,13 @@ app.use(cookieSession({
 const usersRoutes = require("./routes/users");
 const booksRoutes = require("./routes/books-router");
 const moviesRoutes = require("./routes/movies-router");
+const restaurantsRoutes = require("./routes/restaurants-router");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/", usersRoutes(db));
 app.use("/api/books", booksRoutes(db));
 app.use("/api/movies", moviesRoutes(db));
-
+app.use("/api/restaurants", restaurantsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 
@@ -58,6 +59,14 @@ app.use("/api/movies", moviesRoutes(db));
 //   res.render("index");
 // });
 
+cors_proxy.createServer({
+  originWhitelist: [], // Allow all origins
+  requireHeader: ['origin', 'x-requested-with'],
+  removeHeaders: ['cookie', 'cookie2']
+});
+// .listen(PORT, '0.0.0.0', function() {
+//   console.log('Running CORS Anywhere on ' + host + ':' + port);
+// });
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });

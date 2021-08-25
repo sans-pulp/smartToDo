@@ -43,7 +43,12 @@ CREATE TABLE products (
 CREATE TABLE restaurants (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
-  item TEXT NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  address VARCHAR(255),
+  city VARCHAR(255),
+  image_thumbnail VARCHAR(255) DEFAULT 'https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format',
+  rating NUMERIC,
+  type VARCHAR(255),
   created_at TIMESTAMP DEFAULT NOW(),
-  is_completed BOOLEAN DEFAULT TRUE
+  is_completed BOOLEAN DEFAULT FALSE
 );
