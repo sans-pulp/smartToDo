@@ -47,7 +47,7 @@ $(document).ready(function() {
                />
             </svg>
            </button>
-          <button id="del-btn">
+          <button id="del-btn-${item.media_type || 'book'}">
           <input type="hidden" value="${item.id}" name="itemId" class="itemId">
             <svg
                xmlns="http://www.w3.org/2000/svg"

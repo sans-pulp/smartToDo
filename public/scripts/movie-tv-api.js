@@ -43,7 +43,7 @@ $(() => {
       $.post("/api/movies/new", movieObj)
         .done((data) => {
           console.log(data);
-          alert("Movie added!");
+          alert("Movie/Show added!");
           window.location = "/";
         });
     });
