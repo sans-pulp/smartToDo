@@ -2,15 +2,15 @@ $(document).ready(function() {
 
   const userId = $("#userid").val();
 
-//POPULATE TO DO LIST
+  //POPULATE TO DO LIST
 
-const populateList = function(pathString){
-  $('#todo-list').empty();
-  $.get(pathString)
-  .then(items => {
-    items.forEach(item => {
-      $('#todo-list').append(
-        `<li class="list-item">
+  const populateList = function(pathString) {
+    $('#todo-list').empty();
+    $.get(pathString)
+      .then(items => {
+        items.forEach(item => {
+          $('#todo-list').append(
+            `<li class="list-item">
         <svg
           xmlns="http://www.w3.org/2000/svg"
            width="50"
@@ -28,7 +28,7 @@ const populateList = function(pathString){
          </svg>
         <div class="item-text">
            <h4>${item.title}</h4>
-          <p>By ${item.author}</p>
+          <p>${item.author || item.media_type}</p>
         </div>
         <img src='${item.image_thumbnail}'>
         <div class="hover-buttons">
@@ -47,7 +47,8 @@ const populateList = function(pathString){
                />
             </svg>
            </button>
-          <button>
+          <button id="del-btn">
+          <input type="hidden" value="${item.id}" name="itemId" class="itemId">
             <svg
                xmlns="http://www.w3.org/2000/svg"
               width="36"
@@ -67,9 +68,9 @@ const populateList = function(pathString){
           </button>
         </div>
        </li>`
-      )
-    })
-  })
+          );
+        });
+      });
   };
 
   let whichList = document.getElementById('which-list');
