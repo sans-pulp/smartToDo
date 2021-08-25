@@ -10,7 +10,7 @@ const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
 const cookieSession = require('cookie-session');
-
+const cors_proxy = require('cors-anywhere');
 // PG database client/connection setup -- abstracted to db file!
 const db = require('./lib/db');
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
@@ -58,6 +58,14 @@ app.use("/api/movies", moviesRoutes(db));
 //   res.render("index");
 // });
 
+cors_proxy.createServer({
+  originWhitelist: [], // Allow all origins
+  requireHeader: ['origin', 'x-requested-with'],
+  removeHeaders: ['cookie', 'cookie2']
+});
+// .listen(PORT, '0.0.0.0', function() {
+//   console.log('Running CORS Anywhere on ' + host + ':' + port);
+// });
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
