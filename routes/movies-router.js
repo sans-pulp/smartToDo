@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getAllMovies, getMoviesByUserId, addMovie } = require('../db/queries/movies-queries');
+const { getAllMovies, getMoviesByUserId, addMovie, deleteMovieById } = require('../db/queries/movies-queries');
 
 module.exports = (db) => {
   //GET /movies
@@ -28,6 +28,14 @@ module.exports = (db) => {
       });
   });
 
+  router.delete("/:id", (req, res) => {
+    console.log(req.params);
+    const id = req.params.id;
+    deleteMovieById(id)
+      .then(() => {
+        res.json({success: true});
+      });
+  });
   return router;
 
 };

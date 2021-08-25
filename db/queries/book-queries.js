@@ -36,6 +36,18 @@ const addBook = (bookObj) => {
     });
 };
 
+const deleteBookById = (id) => {
+  const query = `DELETE FROM books WHERE id = $1 RETURNING *;`;
+  return db.query(query, [id])
+    .then((res) => {
+      console.log('deleteBookById query:', res.rows);
+      return res.rows;
+    })
+    .catch((err) => {
+      console.log('❌ deleteBookById query error:', err.stack);
+    });
+};
+
 module.exports = {
-  getAllBooks, getBooksByUserId, addBook
+  getAllBooks, getBooksByUserId, addBook, deleteBookById
 };

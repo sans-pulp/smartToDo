@@ -2,16 +2,20 @@ $(document).ready(function() {
 
   const userId = $("#userid").val();
 
-//POPULATE TO DO LIST
+  //POPULATE TO DO LIST
 
-const populateList = function(pathString){
-  $('#todo-list').empty();
-  $.get(pathString)
-  .then(items => {
-    items.forEach(item => {
-      $('#todo-list').append(
-        `<li class="list-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+  const populateList = function(pathString) {
+    $('#todo-list').empty();
+    $.get(pathString)
+      .then(items => {
+        items.forEach(item => {
+          $('#todo-list').append(
+            `<li class="list-item">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+           width="50"
+          height="50"
+           fill="currentColor"
            class="bi bi-check-circle completed-button"
            viewBox="0 0 16 16"
            >
@@ -24,7 +28,7 @@ const populateList = function(pathString){
          </svg>
         <div class="item-text">
            <h4>${item.title}</h4>
-          <p>By ${item.author}</p>
+          <p>${item.author || item.media_type}</p>
         </div>
         <img src='${item.image_thumbnail}'>
         <div class="hover-buttons">
@@ -36,8 +40,16 @@ const populateList = function(pathString){
                />
             </svg>
            </button>
-          <button>
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16" >
+          <button id="del-btn-${item.media_type || 'book'}">
+          <input type="hidden" value="${item.id}" name="itemId" class="itemId">
+            <svg
+               xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+               fill="currentColor"
+              class="bi bi-trash"
+               viewBox="0 0 16 16"
+             >
               <path
                 d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
                />
@@ -49,9 +61,9 @@ const populateList = function(pathString){
           </button>
         </div>
        </li>`
-      )
-    })
-  })
+          );
+        });
+      });
   };
 
   let whichList = document.getElementById('which-list');
