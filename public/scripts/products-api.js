@@ -47,7 +47,7 @@ $(() => {
               if(isEnglish(dataArr[i].Product.productName)){
 
                 //dynamically show search results on page
-                $('#product-res').append(`<li data-id="${i}" id="product${i + 1}"><p class="title"> Title: ${onlyEnglish(dataArr[i].Product.productName)}<img class="thumbnail" src=${dataArr[i].Product.smallImageUrl} /><p> Price: $${dataArr[i].Product.averagePrice / 100}</p><button>Select this</button></li> `);
+                $('#product-res').append(`<li data-id="${i}" id="product${i + 1}"><p class="title">${onlyEnglish(dataArr[i].Product.productName)}<img class="thumbnail" src=${dataArr[i].Product.smallImageUrl} /><p> Price: $${dataArr[i].Product.averagePrice / 100}</p><button>Select this</button></li> `);
 
               }
             }
