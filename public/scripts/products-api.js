@@ -1,4 +1,4 @@
-const { rakutenKey } = require('keys/rakuten-key.js')
+
 $(() => {
   $('#search').on('click', '.item-input', function() {
     function isEnglish(str) {
@@ -33,7 +33,7 @@ $(() => {
             "method": "GET",
             "headers": {
               "x-rapidapi-host": "rakuten_webservice-rakuten-marketplace-product-search-v1.p.rapidapi.com",
-              "x-rapidapi-key": rapidKey()
+              "x-rapidapi-key": "06ba316887mshafb6d25264be89cp171583jsn6033b1af5d8a"
             }
           };
 

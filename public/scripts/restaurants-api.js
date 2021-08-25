@@ -1,5 +1,3 @@
-const { rapidKey } = require('keys/rapid-key.js')
-
 $(() => {
   $('#search').on('click', '.item-input', function() {
         let $restaurantList = [];
@@ -12,7 +10,7 @@ $(() => {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "resy.p.rapidapi.com",
-        "x-rapidapi-key": rapidKey()
+        "x-rapidapi-key": "06ba316887mshafb6d25264be89cp171583jsn6033b1af5d8a"
       }
     };
 
