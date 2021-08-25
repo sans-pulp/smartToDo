@@ -16,11 +16,9 @@ $(() => {
             $bookList = data.items;
             for (let i = 0; i < 5; i++) {
               //dynamically show search results on page
-              $('#book-res').append(`<li data-id="${i}" id="book${i + 1}"><p class="title">Title: ${dataArr[i].volumeInfo.title}</p><p class="author">Author(s): ${dataArr[i].volumeInfo.authors}</p><img class="thumbnail" src=${dataArr[i].volumeInfo.imageLinks.thumbnail} /><button>Select this</button></li> `);
+              $('#book-res').prepend(`<li data-id="${i}" id="book${i + 1}"><p class="title">Title: ${dataArr[i].volumeInfo.title}</p><p class="author">Author(s): ${dataArr[i].volumeInfo.authors}</p><img class="thumbnail" src=${dataArr[i].volumeInfo.imageLinks.thumbnail} /><button>Select this</button></li> `);
             }
-
-          });
-
+          })
       }
     });
 
