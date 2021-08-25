@@ -3,7 +3,6 @@ $(document).ready(function() {
   $('#search').on('click', '.item-input', function() {
 
     $("#food-search").on('input', function() {
-      console.log("KKSSKDSKDN")
       // target text in search box, pass that into API as query term...
       $('#food-res').empty();
       let input = $(this).val();
@@ -33,7 +32,7 @@ $(document).ready(function() {
           $restaurantList = data.businesses;
 
           for (let i = 0; i < 4; i++) {
-            $('#food-res').append(`<li data-id="${i}"> <p>Name: ${dataArr[i].name}</p> <p>Location: ${dataArr[i].location.address1}, ${dataArr[i].location.city}, ${dataArr[i].location.state} </p> <p>Phone #: ${dataArr[i].phone}</p> <p>Rating: ${dataArr[i].rating}</p> <img src=${dataArr[i].image_url} width="150"/> <button> Select this </button> </li>`)
+            $('#food-res').append(`<li data-id="${i}" class="search-result"> <div class="left"><p class="text-1 name">Name: ${dataArr[i].name}</p> <p class="text-2 address" >Location: ${dataArr[i].location.address1}, ${dataArr[i].location.city}, ${dataArr[i].location.state} </p> <p class="text-3 contact" >Phone #: ${dataArr[i].phone}</p> <p class="text-4 rating" >Rating: ${dataArr[i].rating}</p> </div><div class="right"><img src=${dataArr[i].image_url} class="item-img" width="150"/> <button>Select</button> </div></li>`)
 
           }
         });

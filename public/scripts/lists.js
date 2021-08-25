@@ -26,20 +26,14 @@ $(document).ready(function() {
             d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"
            />
          </svg>
+         <div class="item-content">
         <div class="item-text">
-           <h4>${item.title || item.name}</h4>
-          <p>${item.author || item.media_type || item.address}</p>
+           <p class="text-1">${item.title || item.name}</p>
+          <p class ="text-2">${item.author || item.media_type || item.address}</p>
         </div>
-        <img src='${item.image_thumbnail}' width="150">
+        <img src='${item.image_thumbnail}' width="100px">
+        </div>
         <div class="hover-buttons">
-           <button class="switch-btn">
-             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" >
-              <path
-                fill-rule="evenodd"
-                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-               />
-            </svg>
-           </button>
           <button id="del-btn-${item.media_type || item.type}">
           <input type="hidden" value="${item.id}" name="itemId" class="itemId">
             <svg
@@ -97,7 +91,7 @@ $(document).ready(function() {
       `);
       $('.item-input').css("visibility", "hidden");
       $('div.movies').css("visibility", "visible");
-      whichList.innerHTML = "My Movies";
+      whichList.innerHTML = "My Movies & Shows";
       populateList(`/api/movies/${userId}`);
     }
     if ($(this).hasClass('food') && $(this).hasClass('active')) {

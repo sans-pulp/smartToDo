@@ -18,9 +18,9 @@ $(() => {
             for (let i = 0; i < 5; i++) {
               //slight issue, some movies/tv shows do not have a title but have a name or original_title, how do i select which one is not undefined??? --> has to do with mediatype => Movies usually have a title, while tv shows have a name!
               if (dataArr[i].media_type === 'movie') {
-                $('#movie-res').append(`<li data-id="${i}"> <p>Title: ${dataArr[i].title}</p> <img src=https://image.tmdb.org/t/p/w154${dataArr[i].poster_path} /> <button>Select this</button> </li>`);
-              } else {
-                $('#movie-res').append(`<li data-id="${i}"> <p>Title: ${dataArr[i].name}</p> <img src=https://image.tmdb.org/t/p/w154${dataArr[i].poster_path}> <button>Select this</button> </li> `);
+                $('#movie-res').append(`<li data-id="${i}" class="search-result"><div class="left"><h5 class="text-1 title">${dataArr[i].title}</h5><p class="text-2 release-date">${parseInt(dataArr[i].release_date)}</p> </div><div class="right"><img src=https://image.tmdb.org/t/p/w154${dataArr[i].poster_path} class="item-img"/> </div> </li>`);
+              } else if (dataArr[i].media_type === 'tv') {
+                $('#movie-res').append(`<li data-id="${i}" class="search-result"><div class="left"><h5 class="text-1 title">${dataArr[i].name}</h5></div><div class="right"><img src=https://image.tmdb.org/t/p/w154${dataArr[i].poster_path} class="item-img"> </div> </li> `);
               }
             }
           });
