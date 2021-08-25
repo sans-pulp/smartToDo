@@ -9,9 +9,6 @@ $(() => {
       //Idea: Convert AJAX req into a promise, use .then to access data to store in db...
       if (input.length >= 4) {
         //this gets the configuration to set the base_url for poster_path...
-        // $.get(`https://api.themoviedb.org/3/configuration?api_key=e6b6ba40dc45cede536cb541a2b35eab`, function (data) {
-        //   console.log(data);
-        // });
         $.get(`https://api.themoviedb.org/3/search/multi?api_key=${config.movieApiKey}&query=${input}`, function(data) {
           console.log('API call:');
         })
@@ -26,7 +23,6 @@ $(() => {
                 $('#movie-res').append(`<li data-id="${i}"> <p>Title: ${dataArr[i].name}</p> <img src=https://image.tmdb.org/t/p/w154${dataArr[i].poster_path}> <button>Select this</button> </li> `);
               }
             }
-            // store stuff in db from here? --> ON Click!
           });
       }
     });
