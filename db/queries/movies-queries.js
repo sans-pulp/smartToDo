@@ -15,7 +15,7 @@ const getMoviesByUserId = (id) => {
   const query = 'SELECT * FROM movies WHERE user_id = $1;';
   return db.query(query, [id])
     .then((res) => {
-      console.log('getAllMovies query:', res.rows);
+      console.log('getMoviesById query:', res.rows);
       return res.rows;
     })
     .catch((err) => {

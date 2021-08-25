@@ -27,10 +27,10 @@ $(document).ready(function() {
            />
          </svg>
         <div class="item-text">
-           <h4>${item.title}</h4>
-          <p>${item.author || item.media_type}</p>
+           <h4>${item.title || item.name}</h4>
+          <p>${item.author || item.media_type || item.address}</p>
         </div>
-        <img src='${item.image_thumbnail}'>
+        <img src='${item.image_thumbnail}' width="150">
         <div class="hover-buttons">
            <button>
              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16" >
@@ -40,7 +40,7 @@ $(document).ready(function() {
                />
             </svg>
            </button>
-          <button id="del-btn-${item.media_type || 'book'}">
+          <button id="del-btn-${item.media_type || item.type}">
           <input type="hidden" value="${item.id}" name="itemId" class="itemId">
             <svg
                xmlns="http://www.w3.org/2000/svg"
