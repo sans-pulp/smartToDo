@@ -3,7 +3,7 @@ const router = express.Router();
 const { getAllMovies, getMoviesByUserId, addMovie, deleteMovieById } = require('../db/queries/movies-queries');
 
 module.exports = (db) => {
-  //GET /movies
+  //GET /api/movies
   router.get("/", (req, res) => {
     getAllMovies()
       .then(movies => {
