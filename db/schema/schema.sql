@@ -31,7 +31,7 @@ CREATE TABLE movies (
   rating NUMERIC,
   media_type VARCHAR(255),
   created_at TIMESTAMP DEFAULT NOW(),
-  is_completed BOOLEAN DEFAULT TRUE
+  is_completed BOOLEAN DEFAULT FALSE
 );
 CREATE TABLE products (
   id SERIAL PRIMARY KEY NOT NULL,
