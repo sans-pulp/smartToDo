@@ -13,11 +13,13 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                   <img src=<%=user.avatar %> alt="" width="40" >
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#"><span><%= user.name %></span></a></li>
-                  <li><a class="dropdown-item" href="#"><span><%= user.email %></span></a></li>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#"><span>Name: <%= user.name %></span></a></li>
+                  <li><a class="dropdown-item" href="#"><span>Email: <%= user.email %></span></a></li>
+                  <!-- Update profile trigger modal -->
+                  <li><a href="#" class="dropdown-item"><button type="button" class="btn btn-outline-primary" id="update-profile" data-bs-toggle="modal" data-bs-target="#update-form"> <i class="bi bi-brush"></i> Update Profile</button></a></li>
                   <li><a class="dropdown-item" href="#"><form action="/logout" method="post">
-                      <button type="submit" class="btn btn-dark">Logout</button>
+                      <button type="submit" class="btn btn-outline-dark"><i class="bi bi-door-open"></i> Logout</button>
                     </form></a>
                   </li>
                 </ul>

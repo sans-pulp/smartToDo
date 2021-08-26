@@ -3,9 +3,9 @@ $(() => {
 
   $('.login')
     .click(event => {
-      event.preventDefault()
-      $('#form-container').empty()
-      //generate login form and append it to the #login-form
+      event.preventDefault();
+      $('#form-container').empty();
+      //generate login form, add it to the form-container element
       $('#form-container').append(`
       <div class="p-5 m-5 border rounded-3" id="login-form">
       <h1>Login</h1>
@@ -25,8 +25,8 @@ $(() => {
 
   $('.register')
     .click(event => {
-      event.preventDefault()
-      $('#form-container').empty()
+      event.preventDefault();
+      $('#form-container').empty();
       $('#form-container').append(`
       <div class="p-5 m-5 border rounded-3" id="register-form">
       <h1>Registration Form</h1>
@@ -49,4 +49,19 @@ $(() => {
       </div>
       `);
     });
+
+  //Complete Book
+  // $('#todo-list').on('click', '#complete-book' , function() {
+  //   const id = $(this).find('.itemId').val();
+  //   $.ajax({
+  //     url: `/api/books/${id}`,
+  //     type: 'POST',
+  //     success: function(res) {
+  //       alert('Movie Deleted!');
+
+  //     }
+  //   });
+  // }
+
+
 });

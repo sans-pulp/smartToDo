@@ -68,5 +68,34 @@ module.exports = (db) => {
       });
   });
 
+
+
+  //Update user profile
+  router.post("/update", (req, res) => {
+    console.log(req.body);
+    const updateObj = req.body;
+    const userId = req.session.user_id;
+    let propertiesToUpdate = ['name', 'email', 'avatar'];
+    if (updateObj.password) {
+      propertiesToUpdate.push('password');
+    }
+    // Stretch: Setup propertiesToUpdate to filter through and check UpdateObj for all required values. If a value is missing, stop here and send a status code error
+    let setClause = propertiesToUpdate.map((column, index) => `${column} = $${index + 1}`).join(', ');
+    console.log(setClause);
+    const updateQuery = `UPDATE users SET ${setClause} WHERE id = $${propertiesToUpdate.length + 1} ;`;
+    const values = propertiesToUpdate.map(property => updateObj[property]).concat(userId);
+    db.query(updateQuery, values)
+      .then(() => {
+        console.log('Update user succeeded');
+        // res.status(200).end();
+        res.redirect('/');
+      })
+      .catch(error => {
+        res.status(500).send('User not updated!');
+      });
+
+
+  });
+
   return router;
 };
