@@ -1,6 +1,6 @@
 // See: https://sass-lang.com/
 $mainBrand: #284b63;
-$secondary: #3c6e71;
+$secondary: #19949b;
 $textColor: #353535;
 $lightTouch: #ffffff;
 $extra: #d9d9d9;
@@ -53,8 +53,9 @@ body {
   //   }
   // }
   .search-result{
+    font-size: 0.85em;
     display: flex;
-    margin-top: 25px;
+    margin-top: 15px;
     border: solid $mainBrand 4px;
     border-radius: 20px;
     background-color: $lightTouch;
@@ -67,28 +68,34 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      height: 150px;
     }
     .right {
       align-items: center;
       justify-content: space-evenly;
     }
     .text-1 {
-      overflow: hidden;
-      text-overflow: ellipsis;
       border: green dotted 1px;
       margin: 10px;
       font-weight: bold;
       word-wrap: break-word;
+      overflow: auto;
+      outline: none;
+      resize: none;
+      text-overflow: ellipsis;
     }
     .text-2{
       border: orangered dotted 1px;
-      margin-left: 10px;
-      padding: 10px;
+      .author {
+        overflow: auto;
+        max-height: 50px;
+      }
+
     }
     .item-img {
       border: blueviolet dotted 1px;
       padding: 10px;
-      height: 80%;
+      height: 90%;
       max-width: 140px;
     }
     button {
@@ -123,7 +130,7 @@ body {
       height: 150px;
       background-color: $lightTouch;
       padding: 10px;
-      margin-bottom: 10px;
+      margin-top: 15px;
       border: solid $mainBrand 4px;
       border-radius: 20px;
       display: flex;
@@ -139,7 +146,7 @@ body {
       }
       .text-1 {
         font-weight: bold;
-        font-size: 0.85em;
+        font-size: 0.95em;
         word-wrap: normal;
         overflow: hidden;
         // height: 80px;

@@ -27,7 +27,7 @@ $(() => {
             for (let i = 0; i < 4; i++) {
               //dynamically show search results on page
               $('#product-res').append(`
-              <li data-id="${i}" class="search-result"> <div class="left"> <p class="title"> Item: ${dataArr[i].title}</p> <p class="price">$${dataArr[i].price.current_price}</p></div> <div class="right"><img class="item-img" src=${dataArr[i].thumbnail} /></div></li>`);
+              <li data-id="${i}" class="search-result"> <div class="left"> <p class="title text-1">${dataArr[i].title}</p> <p class="price text-2">$${dataArr[i].price.current_price}</p></div> <div class="right"><img class="item-img" src=${dataArr[i].thumbnail} /></div></li>`);
             }
           });
       }
