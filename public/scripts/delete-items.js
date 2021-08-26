@@ -5,7 +5,7 @@ $(() => {
     $.ajax({
       url: `/api/movies/${id}`,
       type: 'DELETE',
-      success: function(res) {
+      success: function() {
         alert('TV Show Deleted!');
         window.location = "/";
       }
@@ -18,7 +18,7 @@ $(() => {
     $.ajax({
       url: `/api/movies/${id}`,
       type: 'DELETE',
-      success: function(res) {
+      success: function() {
         alert('Movie Deleted!');
         window.location = "/";
       }
@@ -32,7 +32,7 @@ $(() => {
     $.ajax({
       url: `/api/books/${id}`,
       type: 'DELETE',
-      success: function(res) {
+      success: function() {
         alert('Book Deleted!');
         window.location = "/";
       }
@@ -45,7 +45,7 @@ $(() => {
     $.ajax({
       url: `/api/restaurants/${id}`,
       type: 'DELETE',
-      success: function(res) {
+      success: function() {
         alert('Restaurant Deleted!');
         window.location = "/";
       }
@@ -58,7 +58,7 @@ $(() => {
     $.ajax({
       url: `/api/products/${id}`,
       type: 'DELETE',
-      success: function(res) {
+      success: function() {
         alert('Product Deleted!');
         window.location = "/";
       }
