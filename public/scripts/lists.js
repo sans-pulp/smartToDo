@@ -29,7 +29,7 @@ $(document).ready(function() {
          <div class="item-content">
         <div class="item-text">
            <p class="text-1">${item.title || item.name}</p>
-          <p class ="text-2">${item.author || item.media_type || item.address}</p>
+          <p class ="text-2">${item.author || item.media_type || item.address || item.price }</p>
         </div>
         <img src='${item.image_thumbnail}' width="100px">
         </div>
