@@ -1,6 +1,5 @@
 // See: https://sass-lang.com/
 
-@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 $mainBrand: #403d39;
 $secondary: #eb5e28;
 $textColor: #252422;
@@ -25,7 +24,6 @@ body {
       }
     }
     .navbar-brand {
-      font-family: 'Oleo Script', cursive;
       color: $lightTouch;
       font-size: 30px;
     }
