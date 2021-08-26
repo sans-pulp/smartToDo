@@ -1,59 +1,62 @@
 // See: https://sass-lang.com/
-
-$mainBrandColor: #F060D6;
-$secondaryFocus: #4C9FEB;
-$textColor: #244751;
-$lightTouch: snow;
+$mainBrand: #284b63;
+$secondary: #3c6e71;
+$textColor: #353535;
+$lightTouch: #ffffff;
+$extra: #d9d9d9;
 
 body {
   padding: 0;
-  background-color: #EEE;
-
+  background-color: $lightTouch;
   header {
-    background-color: $lightTouch;
-    height: 100px;
-    width: 100%;
-    // position: fixed;
-    // top: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-
-      h1 {
-        color: $textColor;
-        border: 1px red dotted;
-        padding: 10px;
-      }
-
-    .userProfile {
-      border: slategrey 1px dotted;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-      color: $textColor;
-
-      .userInfo {
-        display: flex;
-        flex-direction: column;
-        margin-right: 10px;
-        align-items: center;
-      }
-
-
-      img {
-        width:50px;
-        height: 50px;
-        border-radius: 25px;
-      }
-    }
+    background-color: $mainBrand;
+    color: $lightTouch;
   }
+
+  // header {
+  //   background-color: $lightTouch;
+  //   height: 100px;
+  //   width: 100%;
+  //   // position: fixed;
+  //   // top: 0px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: space-between;
+  //   padding: 10px;
+
+  //     h1 {
+  //       color: $textColor;
+  //       border: 1px red dotted;
+  //       padding: 10px;
+  //     }
+
+  //   .userProfile {
+  //     border: slategrey 1px dotted;
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //     padding: 10px;
+  //     color: $textColor;
+
+  //     .userInfo {
+  //       display: flex;
+  //       flex-direction: column;
+  //       margin-right: 10px;
+  //       align-items: center;
+  //     }
+
+
+  //     img {
+  //       width:50px;
+  //       height: 50px;
+  //       border-radius: 25px;
+  //     }
+  //   }
+  // }
   .search-result{
-    border: red dotted 2px;
     display: flex;
     margin-top: 25px;
-    border: solid black 4px;
+    border: solid $mainBrand 4px;
     border-radius: 20px;
     background-color: $lightTouch;
     div {
@@ -90,7 +93,7 @@ body {
       max-width: 140px;
     }
     button {
-      background-color: steelblue;
+      background-color: $secondary;
       color: $lightTouch;
       height: 50px;
       width: 80px;
@@ -102,7 +105,7 @@ body {
     }
   }
   .search-result:hover {
-    box-shadow: 3px 4px 0 slategray;
+    box-shadow: 3px 4px 0 $extra;
     cursor: pointer;
   }
   ul {
@@ -114,7 +117,7 @@ body {
   #todo-list {
     button:hover {
       cursor: pointer;
-      color: crimson;
+      color: $mainBrand;
     }
     padding-right: 25px;
     .list-item {
@@ -122,7 +125,7 @@ body {
       background-color: $lightTouch;
       padding: 10px;
       margin-bottom: 10px;
-      border: solid black 4px;
+      border: solid $mainBrand 4px;
       border-radius: 20px;
       display: flex;
       justify-content: space-evenly;
@@ -131,16 +134,16 @@ body {
         padding: 10px;
         height: 140px;
         display: flex;
-        width: 60%;
+        width: 80%;
         justify-content: space-between;
         text-align: left;
       }
       .text-1 {
         font-weight: bold;
-        font-size: 1.1em;
+        font-size: 0.85em;
         word-wrap: normal;
         overflow: hidden;
-        height: 80px;
+        // height: 80px;
         margin-bottom: 0;
         vertical-align: middle;
         word-wrap: break-word;
@@ -153,21 +156,21 @@ body {
       }
       .completed-button:hover {
         cursor: pointer;
-        color: crimson;
+        color: $mainBrand;
       }
       img {
         height: 100%;
         padding: 10px;
-        border: 2px solid black;
+        border: 2px solid $secondary;
         border-radius: 3px;
       }
     }
     .list-item:hover {
-      box-shadow: 3px 4px 0 slategray;
-      svg:hover {
+      box-shadow: 3px 4px 0 $extra;
+      i:hover {
         transform: scale(1.1);
       }
-      svg {
+      i {
         transition: all 1s;
         transform-origin: 50% 50%;
       }
@@ -220,7 +223,12 @@ body {
     border: dotted 1px blue;
 
   }
-  .inactive{background:steelblue}
+  .inactive{
+    background: $secondary;
+    h5{
+      color: $lightTouch;
+    }
+  }
   .item-input {
     visibility: hidden;
     input {
