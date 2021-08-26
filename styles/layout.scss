@@ -8,6 +8,7 @@ $lightTouch: #fffcf2;
 $extra: #ccc5b9;
 
 body {
+
   padding: 0;
   background-color: $lightTouch;
   header{
@@ -16,6 +17,12 @@ body {
     .navbar {
       height: 90px;
       width: 100%;
+      img {
+        border-radius: 5px;
+      }
+      a.nav-link {
+        padding-left: 0;
+      }
     }
     .navbar-brand {
       font-family: 'Oleo Script', cursive;
@@ -24,6 +31,9 @@ body {
     }
     ul.dropdown-menu {
       background-color: $extra;
+    }
+    li {
+      list-style-type: none;
     }
   }
 
