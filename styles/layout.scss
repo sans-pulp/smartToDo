@@ -80,8 +80,6 @@ body {
       font-weight: bold;
       word-wrap: break-word;
       overflow: auto;
-      outline: none;
-      resize: none;
       text-overflow: ellipsis;
     }
     .text-2{
@@ -91,6 +89,9 @@ body {
         max-height: 50px;
       }
 
+    }
+    .text-3{
+      height: 10px;
     }
     .item-img {
       border: blueviolet dotted 1px;
