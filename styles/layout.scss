@@ -70,12 +70,13 @@ body {
       align-items: center;
       justify-content: space-evenly;
     }
-    .text-1{
+    .text-1 {
       overflow: hidden;
       text-overflow: ellipsis;
       border: green dotted 1px;
       margin: 10px;
       font-weight: bold;
+      word-wrap: break-word;
     }
     .text-2{
       border: orangered dotted 1px;
@@ -117,6 +118,7 @@ body {
     }
     padding-right: 25px;
     .list-item {
+      height: 150px;
       background-color: $lightTouch;
       padding: 10px;
       margin-bottom: 10px;
@@ -126,17 +128,25 @@ body {
       justify-content: space-evenly;
       align-items: center;
       .item-content{
-        height: 150px;
+        padding: 10px;
+        height: 140px;
         display: flex;
         width: 60%;
         justify-content: space-between;
+        text-align: left;
       }
       .text-1 {
         font-weight: bold;
-        font-size: 1.3em;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        font-size: 1.1em;
         word-wrap: normal;
+        overflow: hidden;
+        height: 80px;
+        margin-bottom: 0;
+        vertical-align: middle;
+        word-wrap: break-word;
+      }
+      .text-2 {
+        margin: 0;
       }
       .completed-button {
         margin-left: 10px;
@@ -145,11 +155,31 @@ body {
         cursor: pointer;
         color: crimson;
       }
+      img {
+        height: 100%;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 3px;
+      }
+    }
+    .list-item:hover {
+      box-shadow: 3px 4px 0 slategray;
+      svg:hover {
+        transform: scale(1.1);
+      }
+      svg {
+        transition: all 1s;
+        transform-origin: 50% 50%;
+      }
     }
     .item-text {
+      padding-right: 4px;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-wrap: normal;
+      justify-content: center;
     }
     .hover-buttons button{
       border: none;
@@ -179,6 +209,11 @@ body {
       width: 100px;
       margin: 5px;
       color: $lightTouch;
+      transition: all 1s;
+      transform-origin: 50% 50%;
+    }
+    .list-button:hover {
+      transform: scale(1.05);
     }
   }
   .col-md{

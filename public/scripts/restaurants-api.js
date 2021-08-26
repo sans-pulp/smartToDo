@@ -24,6 +24,7 @@ $(document).ready(function() {
             term: `${input}`,
             location: 'Toronto',
             sort_by: 'rating',
+            categories: 'restaurants',
             limit: 5
           }
         }).then(data => {
@@ -32,7 +33,7 @@ $(document).ready(function() {
           $restaurantList = data.businesses;
 
           for (let i = 0; i < 4; i++) {
-            $('#food-res').append(`<li data-id="${i}" class="search-result"> <div class="left"><p class="text-1 name">Name: ${dataArr[i].name}</p> <p class="text-2 address" >Location: ${dataArr[i].location.address1}, ${dataArr[i].location.city}, ${dataArr[i].location.state} </p> <p class="text-3 contact" >Phone #: ${dataArr[i].phone}</p> <p class="text-4 rating" >Rating: ${dataArr[i].rating}</p> </div><div class="right"><img src=${dataArr[i].image_url} class="item-img" width="150"/> <button>Select</button> </div></li>`)
+            $('#food-res').append(`<li data-id="${i}" class="search-result"> <div class="left"><p class="text-1">Name: ${dataArr[i].name}</p> <p class="text-2 address" >${dataArr[i].location.address1}, ${dataArr[i].location.city}, ${dataArr[i].location.state}Rating: ${dataArr[i].rating}</p></div><div class="right"><img src=${dataArr[i].image_url} class="item-img"/></div></li>`)
 
           }
         });

@@ -34,7 +34,7 @@ $(document).ready(function() {
         <img src='${item.image_thumbnail}' width="100px">
         </div>
         <div class="hover-buttons">
-          <button id="del-btn-${item.media_type || item.type}">
+        <button id="del-btn-${item.media_type || item.type || 'book'}">
           <input type="hidden" value="${item.id}" name="itemId" class="itemId">
             <svg
                xmlns="http://www.w3.org/2000/svg"
