@@ -33,7 +33,7 @@ $(document).ready(function() {
           $restaurantList = data.businesses;
 
           for (let i = 0; i < 4; i++) {
-            $('#food-res').append(`<li data-id="${i}" class="search-result"> <div class="left"><p class="text-1">Name: ${dataArr[i].name}</p> <p class="text-2 address" >${dataArr[i].location.address1}, ${dataArr[i].location.city}, ${dataArr[i].location.state}Rating: ${dataArr[i].rating}</p></div><div class="right"><img src=${dataArr[i].image_url} class="item-img"/></div></li>`)
+            $('#food-res').append(`<li data-id="${i}" class="search-result"> <div class="left"><p class="text-1">${dataArr[i].name}</p> <p class="text-2 address" >${dataArr[i].location.address1}, ${dataArr[i].location.city}, ${dataArr[i].location.state}Rating: ${dataArr[i].rating}</p></div><div class="right"><img src=${dataArr[i].image_url} class="item-img"/></div></li>`)
 
           }
         });
