@@ -11,11 +11,6 @@ $(document).ready(function() {
         items.forEach(item => {
           $('#todo-list').append(
             `<li class="list-item">
-            <button class=" btn complete-${item.media_type || item.type || 'book'}">
-            <input type="hidden" value="${item.id}" name="itemId" class="itemId">
-            <i class="bi bi-check-circle completed-button"></i>
-            </button>
-
          <div class="item-content">
         <div class="item-text">
            <p class="text-1">${item.title || item.name}</p>
