@@ -36,9 +36,14 @@ CREATE TABLE movies (
 CREATE TABLE products (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
-  item TEXT NOT NULL,
+  title VARCHAR (255),
+  price NUMERIC,
+  image_thumbnail VARCHAR(255),
+  rating NUMERIC,
+  url VARCHAR(255),
+  type VARCHAR(255),
   created_at TIMESTAMP DEFAULT NOW(),
-  is_completed BOOLEAN DEFAULT TRUE
+  is_completed BOOLEAN DEFAULT FALSE
 );
 CREATE TABLE restaurants (
   id SERIAL PRIMARY KEY NOT NULL,

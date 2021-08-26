@@ -63,4 +63,17 @@ $(() => {
       }
     });
   });
+
+  //delete product
+  $('#todo-list').on('click', '#del-btn-product' , function() {
+    const id = $(this).find('.itemId').val();
+    $.ajax({
+      url: `/api/products/${id}`,
+      type: 'DELETE',
+      success: function(res) {
+        alert('Product Deleted!');
+        window.location = "/";
+      }
+    });
+  });
 });

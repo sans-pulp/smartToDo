@@ -1,33 +1,38 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid row">
-      <div class="col-sm-2">
-        <a href="" class="navbar-brand">Smart To-Do</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
 
-      </div>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a href="" class="navbar-brand">Smart To-Do</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse col-sm-10" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0 row">
-          <div class="navigation col-md-4">
-            <li class="nav-item">
-              <a href="" class="nav-link active" aria-current="page">Home</a>
-            </li>
-          </div>
-          <% if(user) {%>
-          <div class="user-profile col-md-8 me-auto">
-            <li class="nav-item"><%= user.email %></li>
-            <form action="/logout" method="post">
-              <button type="submit" class="btn">Logout</button>
-            </form>
-            <img src= <%= user.avatar %> alt="" width="40">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+            <div class="d-flex justify-content-center align-content-center align-items-center">
+            <div class="navigation">
+              <li class="nav-item">
+                <a href="" class="nav-link active" aria-current="page">Home</a>
+              </li>
             </div>
-          <% } %>
-        </ul>
+
+            <% if(user) {%>
+              <div class="user-profile d-flex align-content-center align-items-center">
+                <li class="nav-item text-end mx-4">
+                  <%= user.email %>
+                </li>
+                <img src=<%=user.avatar %> alt="" width="40" >
+                <form action="/logout" method="post">
+                  <button type="submit" class="btn">Logout</button>
+                </form>
+              </div>
+              <% } %>
+
+        </div>
       </div>
+      </ul>
+    </div>
     </div>
   </nav>
-<!-- <h1>Smart To-Do</h1> -->
+  <!-- <h1>Smart To-Do</h1> -->
 </header>

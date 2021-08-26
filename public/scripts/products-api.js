@@ -1,15 +1,12 @@
-
 $(() => {
+  let $productList = [];
   $('#search').on('click', '.item-input', function() {
-    let $productList = [];
-    $("#product-search").on('input', function() {
 
+    $("#product-search").on('input', function() {
       // target text in search box, pass that into API as query term...
       $('#product-res').empty();
       let input = $(this).val();
-      console.log(input.length);
-      //Idea: Convert AJAX req into a promise, use .then todata to store in db...
-      if (input.length > 4) {
+      if (input.length > 5) {
         //Make Request-->
         const settings = {
           "async": true,
@@ -22,19 +19,35 @@ $(() => {
           }
         };
 
-        $.ajax(settings).done(function(response) {
-          console.log('api call!');
-        })
+        $.ajax(settings)
           .then(data => {
             const dataArr = data.result;
             $productList = data.result;
-            for (let i = 0; i < 1; i++) {
+            console.log(dataArr);
+            for (let i = 0; i < 4; i++) {
               //dynamically show search results on page
-              $('#product-res').prepend(`<li data-id="${i}" id="book${i + 1}"><p class="title">${dataArr[i].title}</p><p class="price">$${dataArr[i].price.current_price}</p><img class="thumbnail" src=${dataArr[i].thumbnail} width="100px"/><button>Select this</button></li> `);
+              $('#product-res').append(`
+              <li data-id="${i}" class="search-result"> <div class="left"> <p class="title"> Item: ${dataArr[i].title}</p> <p class="price">$${dataArr[i].price.current_price}</p></div> <div class="right"><img class="item-img" src=${dataArr[i].thumbnail} /></div></li>`);
             }
           });
       }
     });
+    $('#product-res').on('click', 'li', function() {
+      let chosenItem = $(this).attr("data-id");
+      console.log('______', chosenItem);
+      const productInfo = $productList[chosenItem];
+      console.log('++++', productInfo);
+      const userId = $("#userid").val();
+      console.log('userId', userId);
+      const productObj = { user: userId, title: productInfo.title, price: productInfo.price.current_price, image: productInfo.thumbnail, rating: productInfo.reviews.rating, url: productInfo.url || null, type: "product" };
+      console.log('productObj', productObj);
+      $.post("/api/products/new", productObj)
+        .done((data) => {
+          console.log(data);
+          alert("Product added!");
+          window.location = "/";
+        });
+    })
 
   });
 });
