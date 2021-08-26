@@ -23,7 +23,7 @@ $(() => {
           .then(data => {
             const dataArr = data.result;
             $productList = data.result;
-            // console.log(dataArr)
+            console.log(dataArr);
             for (let i = 0; i < 4; i++) {
               //dynamically show search results on page
               $('#product-res').append(`
@@ -39,7 +39,7 @@ $(() => {
       console.log('++++', productInfo);
       const userId = $("#userid").val();
       console.log('userId', userId);
-      const productObj = { user: userId, title: productInfo.title, price: productInfo.current_price, image: productInfo.thumbnail, rating: productInfo.reviews.rating, url: productInfo.url || null, type: "product" };
+      const productObj = { user: userId, title: productInfo.title, price: productInfo.price.current_price, image: productInfo.thumbnail, rating: productInfo.reviews.rating, url: productInfo.url || null, type: "product" };
       console.log('productObj', productObj);
       $.post("/api/products/new", productObj)
         .done((data) => {
