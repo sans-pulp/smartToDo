@@ -3,36 +3,43 @@
     <div class="container-fluid">
 
       <a href="" class="navbar-brand">Smart To-Do</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav mb-2 mb-lg-0">
-            <div class="d-flex justify-content-center align-content-center align-items-center">
-            <div class="navigation">
+            <div class="navigation d-flex">
               <li class="nav-item">
-                <a href="" class="nav-link active" aria-current="page">Home</a>
+                <a href="/" class="nav-link" aria-current="page">Home</a>
               </li>
-            </div>
+            <% if (user) { %>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src=<%=user.avatar %> alt="" width="40" >
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#"><span><%= user.name %></span></a></li>
+                  <li><a class="dropdown-item" href="#"><span><%= user.email %></span></a></li>
+                  <li><a class="dropdown-item" href="#"><form action="/logout" method="post">
+                      <button type="submit" class="btn btn-dark">Logout</button>
+                    </form></a>
+                  </li>
+                </ul>
+              </li>
 
-            <% if(user) {%>
-              <div class="user-profile d-flex align-content-center align-items-center">
-                <li class="nav-item text-end mx-4">
-                  <%= user.email %>
-                </li>
-                <img src=<%=user.avatar %> alt="" width="40" >
-                <form action="/logout" method="post">
-                  <button type="submit" class="btn">Logout</button>
-                </form>
-              </div>
-              <% } %>
+            <% } else { %>
 
-        </div>
+              <li class="nav-item">
+                <a href="/login" class="nav-link login" aria-current="page">Login</a>
+              </li>
+              <li class="nav-item">
+                <a href="/register" class="nav-link register" aria-current="page">Register</a>
+              </li>
+            <% } %>
+          </div>
+        </ul>
       </div>
-      </ul>
-    </div>
     </div>
   </nav>
-  <!-- <h1>Smart To-Do</h1> -->
 </header>
