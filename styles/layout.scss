@@ -18,6 +18,9 @@ body {
       color: $lightTouch;
       font-size: 30px;
     }
+    ul.dropdown-menu {
+      background-color: $extra;
+    }
   }
 
   // header {
