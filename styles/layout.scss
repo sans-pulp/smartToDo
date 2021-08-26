@@ -16,12 +16,22 @@ body {
     .navbar {
       height: 90px;
       width: 100%;
-      img {
-        border-radius: 5px;
-      }
       a.nav-link {
         padding-left: 0;
         color: $lightTouch;
+      }
+      a.nav-link:hover {
+        color: $secondary;
+        letter-spacing: 1.2px;
+      }
+      img {
+        max-height: 60px;
+        max-width: 60px;
+        border-radius: 15px;
+        border: 3px solid $lightTouch;
+      }
+      img:hover {
+        border: 3px solid $secondary;
       }
     }
     .navbar-brand {
@@ -30,7 +40,7 @@ body {
       letter-spacing: 2px;
     }
     .navbar-brand:hover {
-      font-weight: bold;
+      letter-spacing: 2.5px;
     }
     ul.dropdown-menu {
       background-color: $extra;
