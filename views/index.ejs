@@ -34,13 +34,11 @@
   <body>
     <%-include('partials/_header')%>
     <% if(user) {%>
-
     <input type="hidden" value="<%= user.id %>" name="userid" id="userid" />
     <main class="container-lg">
       <div class="row">
         <div class="container column col-md">
           <!-- This section hold the category buttons -->
-
           <section class="button-box">
             <h3>I want to...</h3>
             <button class="list-button btn btn-primary btn-lg movies">
@@ -80,8 +78,8 @@ Our list title and lists -->
     </main>
     <% } else {%>
     <!-- This is the page for non-logged in guests -->
-    <a href="/login"><p>Login</p></a>
-    <a href="/register"><p>Register</p></a>
+    <div id="form-container">
+    </div>
     <% } %>
   </body>
 </html>
