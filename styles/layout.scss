@@ -1,16 +1,22 @@
 // See: https://sass-lang.com/
-$mainBrand: #284b63;
-$secondary: #19949b;
-$textColor: #353535;
-$lightTouch: #ffffff;
-$extra: #d9d9d9;
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+$mainBrand: #403d39;
+$secondary: #eb5e28;
+$textColor: #252422;
+$lightTouch: #fffcf2;
+$extra: #ccc5b9;
 
 body {
   padding: 0;
   background-color: $lightTouch;
-  header {
+  header{
     background-color: $mainBrand;
     color: $lightTouch;
+    .navbar-brand {
+      font-family: 'Oleo Script', cursive;
+      color: $lightTouch;
+    }
   }
 
   // header {
