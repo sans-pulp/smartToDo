@@ -9,46 +9,46 @@ body {
   padding: 0;
   background-color: #EEE;
 
-  header {
-    background-color: $lightTouch;
-    height: 100px;
-    width: 100%;
-    // position: fixed;
-    // top: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
+  // header {
+  //   background-color: $lightTouch;
+  //   height: 100px;
+  //   width: 100%;
+  //   // position: fixed;
+  //   // top: 0px;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: space-between;
+  //   padding: 10px;
 
-      h1 {
-        color: $textColor;
-        border: 1px red dotted;
-        padding: 10px;
-      }
+  //     h1 {
+  //       color: $textColor;
+  //       border: 1px red dotted;
+  //       padding: 10px;
+  //     }
 
-    .userProfile {
-      border: slategrey 1px dotted;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-      color: $textColor;
+  //   .userProfile {
+  //     border: slategrey 1px dotted;
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //     padding: 10px;
+  //     color: $textColor;
 
-      .userInfo {
-        display: flex;
-        flex-direction: column;
-        margin-right: 10px;
-        align-items: center;
-      }
+  //     .userInfo {
+  //       display: flex;
+  //       flex-direction: column;
+  //       margin-right: 10px;
+  //       align-items: center;
+  //     }
 
 
-      img {
-        width:50px;
-        height: 50px;
-        border-radius: 25px;
-      }
-    }
-  }
+  //     img {
+  //       width:50px;
+  //       height: 50px;
+  //       border-radius: 25px;
+  //     }
+  //   }
+  // }
   .search-result{
     border: red dotted 2px;
     display: flex;
@@ -131,16 +131,16 @@ body {
         padding: 10px;
         height: 140px;
         display: flex;
-        width: 60%;
+        width: 80%;
         justify-content: space-between;
         text-align: left;
       }
       .text-1 {
         font-weight: bold;
-        font-size: 1.1em;
+        font-size: 0.85em;
         word-wrap: normal;
         overflow: hidden;
-        height: 80px;
+        // height: 80px;
         margin-bottom: 0;
         vertical-align: middle;
         word-wrap: break-word;
@@ -164,10 +164,10 @@ body {
     }
     .list-item:hover {
       box-shadow: 3px 4px 0 slategray;
-      svg:hover {
+      i:hover {
         transform: scale(1.1);
       }
-      svg {
+      i {
         transition: all 1s;
         transform-origin: 50% 50%;
       }
