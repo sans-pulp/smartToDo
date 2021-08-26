@@ -30,6 +30,8 @@ module.exports = (db) => {
           // const templateVars = { user }
           // res.json(user)
           res.redirect('/');
+        } else {
+          res.redirect('/login');
         }
       })
       .catch(err => {
