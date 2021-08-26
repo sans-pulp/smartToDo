@@ -21,6 +21,7 @@ body {
       }
       a.nav-link {
         padding-left: 0;
+        color: $lightTouch;
       }
     }
     .navbar-brand {
@@ -103,6 +104,7 @@ body {
       word-wrap: break-word;
       overflow: auto;
       text-overflow: ellipsis;
+      max-width: 100%;
     }
     .text-2{
       border: orangered dotted 1px;
@@ -231,6 +233,7 @@ body {
     margin-bottom: 30px;
 
     .list-button {
+      background-color: $secondary;
       padding-top: 20px;
       height: 100px;
       width: 100px;
@@ -242,15 +245,11 @@ body {
     .list-button:hover {
       transform: scale(1.05);
     }
-  }
-  .col-md{
-    border: dotted 1px blue;
-
-  }
-  .inactive{
-    background: $secondary;
-    h5{
-      color: $lightTouch;
+    .inactive{
+      background: $extra;
+      h5{
+        color: $lightTouch;
+      }
     }
   }
   .item-input {
