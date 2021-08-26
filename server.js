@@ -39,12 +39,14 @@ const usersRoutes = require("./routes/users");
 const booksRoutes = require("./routes/books-router");
 const moviesRoutes = require("./routes/movies-router");
 const restaurantsRoutes = require("./routes/restaurants-router");
+const productsRoutes = require("./routes/products-router");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/", usersRoutes(db));
 app.use("/api/books", booksRoutes(db));
 app.use("/api/movies", moviesRoutes(db));
 app.use("/api/restaurants", restaurantsRoutes(db));
+app.use("/api/products", productsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 
@@ -59,6 +61,7 @@ app.use("/api/restaurants", restaurantsRoutes(db));
 //   res.render("index");
 // });
 
+//cors-workaround
 cors_proxy.createServer({
   originWhitelist: [], // Allow all origins
   requireHeader: ['origin', 'x-requested-with'],
