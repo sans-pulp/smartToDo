@@ -39,7 +39,14 @@ $(() => {
       $.post("/api/movies/new", movieObj)
         .done((data) => {
           console.log(data);
-          alert("Movie/Show added!");
+          Swal.fire({
+            title: 'Item Added',
+            text: "And the binge-list grows..",
+            timer: 2000,
+            icon: 'success',
+            showCancelButton: false,
+            showConfirmButton: false
+          })
           window.location = "/";
         });
     });

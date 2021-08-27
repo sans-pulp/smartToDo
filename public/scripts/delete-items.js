@@ -6,7 +6,13 @@ $(() => {
       url: `/api/movies/${id}`,
       type: 'DELETE',
       success: function() {
-        alert('TV Show Deleted!');
+        Swal.fire({
+          icon: 'error',
+          title: 'TV Show Deleted',
+          timer: 2000,
+          showCancelButton: false,
+          showConfirmButton: false
+        })
         window.location = "/";
       }
     });
@@ -19,7 +25,13 @@ $(() => {
       url: `/api/movies/${id}`,
       type: 'DELETE',
       success: function() {
-        alert('Movie Deleted!');
+        Swal.fire({
+          icon: 'error',
+          title: 'Movie Deleted',
+          timer: 2000,
+          showCancelButton: false,
+          showConfirmButton: false
+        })
         window.location = "/";
       }
     });
@@ -33,7 +45,13 @@ $(() => {
       url: `/api/books/${id}`,
       type: 'DELETE',
       success: function() {
-        alert('Book Deleted!');
+        Swal.fire({
+          icon: 'error',
+          title: 'Book Deleted',
+          timer: 2000,
+          showCancelButton: false,
+          showConfirmButton: false
+        })
         window.location = "/";
       }
     });
@@ -46,7 +64,13 @@ $(() => {
       url: `/api/restaurants/${id}`,
       type: 'DELETE',
       success: function() {
-        alert('Restaurant Deleted!');
+        Swal.fire({
+          icon: 'error',
+          title: 'Restaurant Deleted',
+          timer: 2000,
+          showCancelButton: false,
+          showConfirmButton: false
+        })
         window.location = "/";
       }
     });
@@ -59,7 +83,13 @@ $(() => {
       url: `/api/products/${id}`,
       type: 'DELETE',
       success: function() {
-        alert('Product Deleted!');
+        Swal.fire({
+          icon: 'error',
+          title: 'Product Deleted',
+          timer: 2000,
+          showCancelButton: false,
+          showConfirmButton: false
+        })
         window.location = "/";
       }
     });

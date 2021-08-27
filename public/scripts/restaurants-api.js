@@ -52,7 +52,14 @@ $(document).ready(function() {
       $.post("/api/restaurants/new", restObj)
         .done((data) => {
           console.log(data);
-          alert("Restaurant added!");
+          Swal.fire({
+            title: 'Restaurant Added',
+            text: "Hope you're hungry!",
+            timer: 2000,
+            icon: 'success',
+            showCancelButton: false,
+            showConfirmButton: false
+          })
           window.location = "/";
         });
     });

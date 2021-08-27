@@ -38,7 +38,14 @@ $(() => {
       $.post("/api/books/new", bookObj)
         .done(function(data) {
           console.log(data);
-          alert("Book added!");
+          Swal.fire({
+            title: 'Book Added',
+            text: "Don't forget a bookmark!",
+            timer: 2000,
+            icon: 'success',
+            showCancelButton: false,
+            showConfirmButton: false
+          })
           window.location = "/";
         });
 

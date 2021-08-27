@@ -44,7 +44,14 @@ $(() => {
       $.post("/api/products/new", productObj)
         .done((data) => {
           console.log(data);
-          alert("Product added!");
+          Swal.fire({
+            title: 'Product Added',
+            text: "Time to go shopping!",
+            timer: 2000,
+            icon: 'success',
+            showCancelButton: false,
+            showConfirmButton: false
+          })
           window.location = "/";
         });
     })
