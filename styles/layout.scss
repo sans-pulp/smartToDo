@@ -1,7 +1,7 @@
 // See: https://sass-lang.com/
 
-$mainBrand: #403d39;
-$secondary: #eb5e28;
+$mainBrand: #121420;
+$secondary: #EF2D56;
 $textColor: #252422;
 $lightTouch: #fffcf2;
 $extra: #ccc5b9;
@@ -24,14 +24,14 @@ body {
         color: $secondary;
         letter-spacing: 1.2px;
         img {
-          border: 3px solid $secondary;
+          border: 1px solid $secondary;
         }
       }
       img {
         max-height: 60px;
         max-width: 60px;
         border-radius: 15px;
-        border: 3px solid $lightTouch;
+        border: 1px solid $lightTouch;
       }
 
     }
@@ -49,6 +49,16 @@ body {
     }
     li {
       list-style-type: none;
+    }
+  }
+
+  .main {
+    font-size: 30px;
+    #todo-header {
+      font-size: 1.2em;
+    }
+    h1 {
+      font-size: 1.2em;
     }
   }
   .search-result{
@@ -81,6 +91,7 @@ body {
       overflow: auto;
       text-overflow: ellipsis;
       max-width: 100%;
+      // font-s
     }
     .text-2{
       .author {
@@ -189,9 +200,10 @@ body {
       background-color: $secondary;
       border: 3px solid $textColor;
       padding-top: 20px;
-      height: 100px;
-      width: 100px;
-      margin: 5px;
+      height: 20vh;
+      width: 10vw;
+      font-size: 3rem;
+      margin: 0.25em;
       color: $lightTouch;
       transition: all 1s;
       transform-origin: 50% 50%;

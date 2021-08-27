@@ -39,12 +39,12 @@
     <%-include('partials/_header')%>
     <% if(user) {%>
     <input type="hidden" value="<%= user.id %>" name="userid" id="userid" />
-    <main class="container-lg">
-      <div class="row">
+    <main class="container-fluid">
+      <div class="row main">
         <div class="container column col-md">
           <!-- This section hold the category buttons -->
           <section class="button-box">
-            <h3>I want to...</h3>
+            <h1>I want to...</h1>
             <button class="list-button btn btn-primary btn-lg movies">
               <i class="bi bi-camera-reels"></i>
               <h5>Watch</h5>
