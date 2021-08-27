@@ -1,9 +1,10 @@
 // See: https://sass-lang.com/
 
 $mainBrand: #121420;
+$primary: #d3244a;
 $secondary: #EF2D56;
 $textColor: #252422;
-$lightTouch: #fffcf2;
+$lightTouch: #fff2f6;
 $extra: #ccc5b9;
 
 body {
@@ -11,12 +12,55 @@ body {
   padding: 0;
   background-color: $lightTouch;
 
+  .card {
+    margin: 5em;
+    .card-title {
+      padding: 0.5em 2em;
+      font-size: 4vh;
+    }
+    .card-body {
+      .card-text {
+        font-size: 2.5vh;
+        padding: 0em 1em;
+      }
+
+    }
+    .btn {
+      margin: 0em 0.5em;
+      padding: 0.75em;
+      font-size: 1.8vh;
+    }
+    .card-footer {
+      font-size: 2vh;
+    }
+  }
   .modal-content {
     background-color: $lightTouch;
   }
 
   .form-control {
     background-color: $lightTouch;
+  }
+
+  .btn-outline-primary {
+    color: $secondary;
+    border-color: $secondary;
+  }
+  .btn-outline-primary:hover {
+    color: $lightTouch;
+    background-color: $secondary;
+    border-color: $secondary;
+  }
+
+  .btn-primary {
+    color: $lightTouch;
+    background-color: $primary;
+    border-color: $secondary;
+  }
+  .btn-primary:hover {
+    color: $lightTouch;
+    background-color: $secondary;
+    border-color: $secondary;
   }
 
   header{
@@ -54,6 +98,9 @@ body {
     }
     .navbar-brand:hover {
       letter-spacing: 2.5px;
+    }
+    .dropdown-menu {
+      background-color: $lightTouch;
     }
     ul.dropdown-menu {
       // background-color: $extra;

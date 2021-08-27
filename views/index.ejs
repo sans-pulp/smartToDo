@@ -112,7 +112,7 @@ Our list title and lists -->
             <label for="password" class="form-label">New Password</label>
             <input type="password" name="password" class="form-control">
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-outline-primary">Submit</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -125,6 +125,19 @@ Our list title and lists -->
     <% } else {%>
     <!-- This is the page for non-logged in guests -->
     <div id="form-container">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Welcome to Smart To-Do!</h5>
+          <p class="card-text">To experience the amazing features of our app, you must join us! <br> Please login or register below!</p>
+          <a href="/login" class="btn btn-primary login">
+            <i class="bi bi-person-badge-fill"></i> Login</a>
+          <a href="/register" class="btn btn-dark register">
+            <i class="bi bi-person-plus-fill"></i> Register</a>
+        </div>
+        <div class="card-footer text-muted">
+          Go on... click a button!
+        </div>
+      </div>
     </div>
     <% } %>
   </body>
