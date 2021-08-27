@@ -94,7 +94,7 @@ body {
       letter-spacing: 2px;
       font-family: 'Tourney', cursive;
       font-size: 4vh;
-      padding-left: 1em;
+      // padding-left: 1em;
     }
     .navbar-brand:hover {
       letter-spacing: 2.5px;
@@ -154,6 +154,7 @@ body {
       // font-size: 3vh;
     }
     .text-2{
+      font-size: 20px;
       .author {
         overflow: auto;
         max-height: 50px;
@@ -162,6 +163,7 @@ body {
     }
     .text-3{
       height: 10px;
+      font-size: 12px;
     }
     .item-img {
       padding: 10px;
@@ -265,6 +267,7 @@ body {
         // padding-top: 20px;
         height: 16vh;
         width: 14vw;
+        min-width: 116px;
         //flex: 2 0 calc(100% - 12vw);
         font-size: 4.65vh;
         padding: 0.25em;
@@ -290,9 +293,40 @@ body {
       border: none;
       border-bottom: black 3px solid;
       background-color: transparent;
+      width: 80%;
     }
     input:focus {
       outline-width: 0;
   }
+  }
+}
+// For Small - Mid-range Mobile Devices
+@media only screen and (max-width: 770px) {
+  #book-res, #product-res, #movie-res, #restaurant-res {
+    padding: 0;
+  }
+  li {
+    div.right{
+      width: 75px;
+    }
+    div.left{
+      width: 70%;
+    }
+  }
+}
+// For Small Mobile Devices
+@media only screen and (max-width: 374px) {
+  li{
+    img {
+      visibility: hidden;
+      width: 0;
+    }
+    div.right{
+      visibility: hidden;
+      width: 0;
+    }
+    div.left {
+      width: 100%;
+    }
   }
 }
