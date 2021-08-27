@@ -16,7 +16,7 @@ $(document).ready(function() {
            <p class="text-1">${item.title || item.name}</p>
           <p class ="text-2">${item.author || item.media_type || item.address || '$' + item.price }</p>
         </div>
-        <img src='${item.image_thumbnail}' width="100px">
+        <img src='${item.image_thumbnail}' width="120px">
         </div>
         <div class="hover-buttons">
         <button id="del-btn-${item.media_type || item.type || 'book'}">

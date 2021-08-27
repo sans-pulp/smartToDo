@@ -7,19 +7,19 @@
           aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
         </button> -->
         <!-- <ul class="navbar-nav mb-2 mb-lg-0"> -->
-            <div class="navigation d-flex mb-2 mb-lg-0">
+            <div class="navigation d-flex mx-2 mb-lg-0">
             <% if (user) { %>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
                   <img src=<%=user.avatar %> alt="" width="40" >
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="navbarDropdownMenuLink">
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-xxl-end" aria-labelledby="navbarDropdownMenuLink">
                   <li><a class="dropdown-item" href="#"><span>Name: <%= user.name %></span></a></li>
                   <li><a class="dropdown-item" href="#"><span>Email: <%= user.email %></span></a></li>
                   <!-- Update profile trigger modal -->
                   <li><a href="#" class="dropdown-item"><button type="button" class="btn btn-outline-primary" id="update-profile" data-bs-toggle="modal" data-bs-target="#update-form"> <i class="bi bi-brush"></i> Update Profile</button></a></li>
                   <li><a class="dropdown-item" href="#"><form action="/logout" method="post">
-                      <button type="submit" class="btn btn-outline-dark"><i class="bi bi-door-open"></i> Logout</button>
+                      <button type="submit" class="btn btn-outline-light"><i class="bi bi-door-open"></i> Logout</button>
                     </form></a>
                   </li>
                 </ul>
